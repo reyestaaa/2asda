@@ -1,0 +1,561 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Tomorrow:wght@300;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #272833;
+  font-family: monospace;
+  overflow-x: hidden;
+}
+
+#fixedbutton {
+  display: none;
+}
+
+.parallax {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+header {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background: url("../img/bg-head.png");
+  background-color: #272833;
+}
+header .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+header .container .text {
+  color: white;
+}
+header .container .text .sun {
+  width: 20%;
+  -webkit-animation: sun 10s ease;
+          animation: sun 10s ease;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  position: relative;
+}
+@-webkit-keyframes sun {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 450px;
+  }
+}
+@keyframes sun {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 450px;
+  }
+}
+header .container .text .text-wrap {
+  background-color: #8a008a;
+  padding: 20px;
+  border: 5px solid black;
+  border-radius: 0px 0px 50px 0px;
+}
+header .container .text .text-wrap h1 {
+  font-family: "Tomorrow", sans-serif;
+  font-size: 2.6rem;
+}
+header .container .text .text-wrap h2 {
+  -webkit-animation: color-change 8s infinite;
+          animation: color-change 8s infinite;
+  margin-bottom: 20px;
+}
+@-webkit-keyframes color-change {
+  0% {
+    color: white;
+  }
+  50% {
+    color: yellow;
+  }
+  100% {
+    color: black;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: white;
+  }
+  50% {
+    color: yellow;
+  }
+  100% {
+    color: black;
+  }
+}
+header .container .text .text-wrap button {
+  font-family: "Tomorrow", sans-serif;
+  padding: 15px;
+  width: 100%;
+  border: 2px solid black;
+  background-color: yellow;
+  border-radius: 0px 15px 0px 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+}
+header .container .text .text-wrap button:hover {
+  transition: 0.3s;
+  background-color: red;
+  color: white;
+}
+header .container .text .text-wrap .icon {
+  margin-top: 30px;
+  text-align: center;
+}
+header .container .text .text-wrap .icon a {
+  color: white;
+  text-decoration: none;
+}
+header .container .text .text-wrap .icon a i {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+header .container .text .text-wrap .icon a i:hover {
+  color: black;
+}
+header .container .img {
+  margin-top: 60px;
+}
+header .container .img img {
+  width: 350px;
+  height: 440px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 10px 10px yellow;
+}
+
+main {
+  background-color: #272833;
+  color: white;
+}
+main #about {
+  margin-top: 50px;
+  background: url("../img/about.png");
+  background-position: 100% 75%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: "Barlow", sans-serif;
+}
+main #about .title {
+  text-align: center;
+}
+main #about .title h1 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+main #about .title img {
+  width: 50%;
+  pointer-events: none;
+}
+@-webkit-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+main #about .more {
+  width: auto;
+  max-width: 50%;
+}
+main #about .more p {
+  font-size: 1.2rem;
+}
+main #about .more .rws {
+  margin: 20px 0 20px 0;
+}
+main #about .more .timeline {
+  border-left: 3px solid white;
+  padding: 0 20px 0 30px;
+}
+main #about .more .timeline .timeline-detail {
+  background-color: #8a008a;
+  padding: 10px 25px;
+  border: 3px solid yellow;
+  position: relative;
+  margin-bottom: 10px;
+}
+main #about .more .timeline .timeline-detail::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px solid white;
+  position: absolute;
+  top: 10px;
+  left: -42px;
+}
+main #skill {
+  background-color: #8a008a;
+  padding: 20px;
+  height: auto;
+  min-height: 70vh;
+}
+main #skill h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+main #skill .list-skill {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  border-radius: 20px;
+  padding: 40px;
+}
+main #skill .list-skill div {
+  text-align: center;
+  margin-right: 10px;
+  padding: 10px;
+}
+main #skill .list-skill div img {
+  width: 80px;
+}
+main #portofolio {
+  background: url("../svg/pohon.svg") top right no-repeat, url("../svg/gunung.svg") top center no-repeat, url("../svg/pohon.svg") top left no-repeat;
+  padding: 30px;
+  font-family: "Tomorrow", sans-serif;
+}
+main #portofolio h1 {
+  margin-top: 30px;
+  font-size: 4rem;
+  margin-bottom: 40px;
+}
+main #portofolio .work {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+main #portofolio .work .card {
+  height: 100%;
+  width: 40%;
+  margin-bottom: 50px;
+  border: 3px solid yellow;
+  padding: 10px;
+  overflow: hidden;
+}
+main #portofolio .work .card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
+}
+main #portofolio .work .card .text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+main #portofolio .work .card .text .tag {
+  display: flex;
+}
+main #portofolio .work .card .text .tag h4 {
+  margin-right: 7px;
+  background-color: #8a008a;
+  padding: 6px;
+  border: 2px solid black;
+}
+main #portofolio .work .card .text .tag-left {
+  justify-content: end;
+}
+main #portofolio .work .card .text button {
+  font-family: "Tomorrow", sans-serif;
+  margin: 10px 0 15px 0;
+  padding: 10px;
+  width: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid black;
+  background-color: yellow;
+}
+main #portofolio .work .card .text button:hover {
+  transition: 0.3s;
+  background-color: red;
+  color: white;
+}
+main #portofolio .work .card-left {
+  text-align: end;
+}
+main #portofolio .semore {
+  text-align: end;
+}
+main #portofolio .semore a {
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+main #portofolio .semore a:hover {
+  color: red;
+}
+main #gallery {
+  padding: 50px;
+}
+main #gallery h1 {
+  margin-bottom: 30px;
+  font-size: 4rem;
+}
+main #gallery .photo-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+main #gallery .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main #gallery .cards img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main #gallery .cards:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.1);
+}
+main #form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  background: url("../svg/segi.svg") right no-repeat;
+}
+main #form form {
+  width: 80%;
+  background-color: orange;
+  border: 5px solid black;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main #form form .text {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+main #form form .text h1 {
+  font-size: 3rem;
+}
+main #form form .text p {
+  font-size: 1.5rem;
+}
+main #form form input {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0;
+}
+main #form form textarea {
+  padding: 15px;
+  border-radius: 5px;
+}
+main #form form .pendek {
+  width: 60%;
+}
+main #form form button {
+  font-family: "Tomorrow", sans-serif;
+  margin: 10px 0 15px 0;
+  padding: 15px;
+  width: 50%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 3px solid black;
+  background-color: orange;
+  border-radius: 0px 0px 30px 0px;
+  color: black;
+}
+main #form form button:hover {
+  transition: 0.3s;
+  background-color: #8a008a;
+  color: white;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 40px;
+  background-color: #8a008a;
+}
+footer .linear-wipe {
+  text-align: center;
+  background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 1s linear infinite;
+          animation: shine 1s linear infinite;
+}
+@-webkit-keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+footer h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+footer .icon {
+  margin-bottom: 20px;
+}
+footer .icon a {
+  color: white;
+  text-decoration: none;
+}
+footer .icon a i {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+footer .icon a i:hover {
+  color: black;
+}
+footer p {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .card-tall {
+    grid-row: span 2/auto;
+  }
+  .card-wide {
+    grid-column: span 2/auto;
+  }
+}
+@media screen and (max-width: 476px) {
+  #fixedbutton {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  #fixedbutton p {
+    font-size: 2.5rem;
+  }
+  header .container .img {
+    padding: 30px;
+    margin-top: 0px;
+  }
+  header .container .img img {
+    height: 300px;
+  }
+  header .container .text {
+    padding: 10px;
+  }
+  @-webkit-keyframes sun {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 260px;
+    }
+  }
+  @keyframes sun {
+    from {
+      left: 0px;
+    }
+    to {
+      left: 260px;
+    }
+  }
+  main #about {
+    background-position: bottom;
+  }
+  main #about .title h1 {
+    margin-bottom: 0px;
+  }
+  main #about .more {
+    max-width: 80%;
+  }
+  main #about .more .timeline {
+    padding: 0 30px 0 30px;
+  }
+  main #portofolio h1 {
+    font-size: 3rem;
+  }
+  main #portofolio .work {
+    flex-direction: column;
+  }
+  main #portofolio .work .card {
+    width: 100%;
+  }
+  main #portofolio .work .card img {
+    max-width: 300px;
+  }
+  main #gallery h1 {
+    font-size: 3rem;
+  }
+  main #form {
+    padding: 15px;
+  }
+  main #form form {
+    width: 100%;
+  }
+  main #form form .text h1 {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

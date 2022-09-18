@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Tomorrow:wght@300;400;700&display=swap');
+$color-main : #272833;
+$pink: #8a008a;
+$barlow: 'Barlow', sans-serif;
+$tomorrow: 'Tomorrow', sans-serif;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: $color-main;
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+#fixedbutton{
+    display: none;
+}
+
+.parallax{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+}
+
+header{
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background: url("../img/bg-head.png");
+    background-color: $color-main;
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        .text{
+            color: white;
+            .sun{
+                width: 20%;
+                animation: sun 10s ease;
+                animation-direction:alternate;
+                animation-iteration-count: infinite;
+                position: relative;
+            }
+            @keyframes sun {
+                from {left: 0px}
+                to {left: 450px;}
+            }
+            .text-wrap{
+                background-color: $pink;
+                padding: 20px;
+                border: 5px solid black;
+                border-radius: 0px 0px 50px 0px;
+                h1{
+                    font-family: $tomorrow;
+                    font-size: 2.6rem;
+                }
+                h2{
+                    animation: color-change 8s infinite;
+                    margin-bottom: 20px;
+                }
+                @keyframes color-change {
+                    0% { color: white; }
+                    50% { color: yellow }
+                    100% { color: black; }
+                }
+                button{
+                    font-family: $tomorrow;
+                    padding: 15px;
+                    width: 100%;
+                    border: 2px solid black;
+                    background-color:yellow;
+                    border-radius: 0px 15px 0px 15px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    color: black;
+                    
+                    &:hover{
+                        transition: 0.3s;
+                        background-color: red;
+                        color: white;
+                    }
+                }   
+                .icon{
+                    margin-top: 30px;
+                    text-align: center;
+                    a{
+                        color: white;
+                        text-decoration: none;
+                        i{
+                            font-size: 1.8rem;
+                            margin-right: 10px;
+                            &:hover{
+                                color: black;
+                            }
+                        }
+                    }
+                }  
+            }
+        }
+        .img{
+            margin-top: 60px;
+           img{
+            width: 350px;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 10px 10px yellow;
+           }
+           
+        }
+    }
+}
+
+main{
+    background-color: $color-main;
+    color: white;
+    #about{
+        margin-top: 50px;
+        background: url('../img/about.png');
+        background-position: 100% 75%;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-family: $barlow;
+
+        .title{
+            text-align: center;
+            h1{
+                font-size: 4rem;
+                margin-bottom: 30px;
+            }
+            img{
+                width: 50%;
+                  pointer-events: none;
+                //   animation: App-logo-spin infinite 20s linear;
+            }
+            @keyframes App-logo-spin {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(360deg);
+                }
+              }
+        }
+        .more{
+            width: auto;
+            max-width: 50%;
+            p{
+                font-size: 1.2rem;
+            }
+            .rws{
+                margin: 20px 0 20px 0;
+            }
+            .timeline{
+                border-left: 3px solid white;
+                padding: 0 20px 0 30px;
+                .timeline-detail{
+                    background-color: $pink;
+                    padding: 10px 25px;
+                    border: 3px solid yellow;
+                    position: relative;
+                    margin-bottom: 10px;
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: red;
+                        border: 3px solid white;
+                        position: absolute;
+                        top: 10px;
+                        left: -42px;
+                    }
+                }
+            }
+        }
+    }
+    #skill{
+        background-color: $pink;
+        padding: 20px;
+        height: auto;
+        min-height: 70vh;
+        h1{
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 30px;
+        }
+        .list-skill{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border: 5px solid black;
+            border-radius: 20px;
+            padding: 40px;
+            div{
+                text-align: center;
+                margin-right: 10px;
+                padding: 10px;
+                img{
+                    width: 80px;
+                }
+            }
+
+        }
+    }
+    #portofolio{
+        background: url('../svg/pohon.svg')top right no-repeat,
+                    url('../svg/gunung.svg')top center no-repeat,
+                    url('../svg/pohon.svg')top left no-repeat;
+        
+        padding: 30px;
+        font-family: $tomorrow;
+        h1{
+            margin-top: 30px;
+            font-size: 4rem;
+            margin-bottom: 40px;
+        }     
+        .work{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            .card{
+                height: 100%;
+                width: 40%;
+                margin-bottom: 50px;
+                border: 3px solid yellow;
+                padding: 10px;
+                overflow: hidden;
+
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    margin-bottom: 10px;
+                }
+                .text{
+                    h2{
+                        font-size: 2.2rem;
+                        margin-bottom: 10px;
+                    }
+                    .tag{
+                        display: flex;
+                        h4{
+                            margin-right: 7px;
+                            background-color: $pink;
+                            padding: 6px;
+                            border: 2px solid black;
+                        }
+                    }
+                    .tag-left{
+                        justify-content: end;
+                    }
+                    button{
+                        font-family: $tomorrow;
+                        margin: 10px 0 15px 0;
+                        padding: 10px;
+                        width: 50%;
+                        font-weight: bold;
+                        font-size: 1rem;
+                        border: 2px solid black;
+                        background-color:yellow;
+                        &:hover{
+                            transition: 0.3s;
+                            background-color: red;
+                            color: white;
+                        }
+                    }
+
+                }
+
+            }
+            .card-left{
+                text-align: end;
+            }
+        } 
+        .semore{
+            text-align: end;
+            a{
+                color: yellow;
+                font-size: 1.5rem;
+                font-weight: bold;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+    }
+    #gallery{
+        padding: 50px;
+        h1{
+            margin-bottom: 30px;
+            font-size: 4rem;
+        }
+        .photo-grid {
+            display: grid;
+            gap: 1rem;
+          
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-auto-rows: 240px;
+          }
+
+          .cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #353535;
+            color: #fff;
+            box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+            transition: all 500ms;
+            overflow: hidden;
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+         }
+          
+        .cards:hover {
+            box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+            transform: translateY(-3px) scale(1.1);
+         }
+          
+    }
+    #form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+        background: url('../svg/segi.svg') right no-repeat;
+
+        form{
+            width: 80%;
+            background-color: orange;
+            border: 5px solid black;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            .text{
+                text-align: center;
+                color: black;
+                h1{
+                    font-size: 3rem;
+                }
+                p{
+                    font-size: 1.5rem;
+                }
+                margin-bottom: 20px;
+            }
+            input{
+                padding: 15px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 0;
+            }
+            textarea{
+                padding: 15px;
+                border-radius: 5px;
+            }
+            .pendek{
+                width: 60%;
+            }
+            button{
+                font-family: $tomorrow;
+                margin: 10px 0 15px 0;
+                padding: 15px;
+                width: 50%;
+                font-weight: bold;
+                font-size: 1.5rem;
+                border: 3px solid black;
+                background-color: orange;
+                
+                border-radius: 0px 0px 30px 0px;
+                color: black;
+                &:hover{
+                    transition: 0.3s;
+                    background-color:$pink;
+                    color: white;
+                }
+            } 
+        }
+    }
+}
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 40px;
+    background-color: $pink;
+    .linear-wipe {
+        text-align: center;
+        background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+        background-size: 200% auto;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        animation: shine 1s linear infinite;
+        @keyframes shine {
+          to {
+            background-position: 200% center;
+          }
+        }
+      }
+    h1{
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    .icon{
+        margin-bottom: 20px;
+        a{
+            color: white;
+            text-decoration: none;
+            i{
+                font-size: 1.8rem;
+                margin-right: 10px;
+                &:hover{
+                    color: black;
+                }
+            }
+        }
+    }
+    p{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .card-tall {
+      grid-row: span 2 / auto;
+    }
+  
+    .card-wide {
+      grid-column: span 2 / auto;
+    }
+  }
+
+@media screen and (max-width:476px){
+    #fixedbutton {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px; 
+        cursor: pointer;
+        p{
+            font-size: 2.5rem;
+        }
+    }
+    header{
+        .container{
+            .img{
+                padding: 30px;
+                margin-top: 0px;
+                img{
+                    height: 300px;
+                }
+            }
+            .text{
+                padding: 10px;
+                @keyframes sun {
+                    from {left: 0px}
+                    to {left: 260px;}
+                }
+            }
+        }
+    }
+    main{
+        #about{
+            background-position: bottom;
+            .title{
+                h1{
+                    margin-bottom: 0px;
+                }
+            }
+            .more{
+                max-width: 80%;
+                .timeline{
+                    padding: 0 30px 0 30px;
+                }
+            }
+        }
+        #skill{
+        }
+        #portofolio{
+            h1{
+                font-size: 3rem;
+            }
+            .work{
+                flex-direction: column;
+                .card{
+                    width: 100%;
+                    img{
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+        #gallery{
+            h1{
+                font-size: 3rem;
+            }
+        }
+        #form{
+            padding: 15px;
+            form{
+                .text{
+                    h1{
+                        font-size: 2rem;
+                    }
+                }
+                width: 100%;
+                input{
+                    
+                }
+            }
+        }
+    }
+}
