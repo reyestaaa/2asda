@@ -45,21 +45,10 @@ header .container .text {
 }
 header .container .text .sun {
   width: 20%;
-  -webkit-animation: sun 10s ease;
-          animation: sun 10s ease;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation: sun 10s ease;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
   position: relative;
-}
-@-webkit-keyframes sun {
-  from {
-    left: 0px;
-  }
-  to {
-    left: 450px;
-  }
 }
 @keyframes sun {
   from {
@@ -80,20 +69,8 @@ header .container .text .text-wrap h1 {
   font-size: 2.6rem;
 }
 header .container .text .text-wrap h2 {
-  -webkit-animation: color-change 8s infinite;
-          animation: color-change 8s infinite;
+  animation: color-change 8s infinite;
   margin-bottom: 20px;
-}
-@-webkit-keyframes color-change {
-  0% {
-    color: white;
-  }
-  50% {
-    color: yellow;
-  }
-  100% {
-    color: black;
-  }
 }
 @keyframes color-change {
   0% {
@@ -141,12 +118,13 @@ header .container .img {
   margin-top: 60px;
 }
 header .container .img img {
-  width: 350px;
+  width: 330px;
   height: 440px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
   box-shadow: 10px 10px yellow;
+  border: 5px solid #8a008a;
 }
 
 main {
@@ -154,7 +132,7 @@ main {
   color: white;
 }
 main #about {
-  margin-top: 50px;
+  padding: 20px;
   background: url("../img/about.png");
   background-position: 100% 75%;
   height: auto;
@@ -174,14 +152,6 @@ main #about .title h1 {
 main #about .title img {
   width: 50%;
   pointer-events: none;
-}
-@-webkit-keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 @keyframes App-logo-spin {
   from {
@@ -280,6 +250,7 @@ main #portofolio .work .card {
 }
 main #portofolio .work .card img {
   width: 100%;
+  height: 300px !important;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 10px;
@@ -442,13 +413,7 @@ footer .linear-wipe {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 1s linear infinite;
-          animation: shine 1s linear infinite;
-}
-@-webkit-keyframes shine {
-  to {
-    background-position: 200% center;
-  }
+  animation: shine 1s linear infinite;
 }
 @keyframes shine {
   to {
@@ -505,14 +470,6 @@ footer p {
   }
   header .container .text {
     padding: 10px;
-  }
-  @-webkit-keyframes sun {
-    from {
-      left: 0px;
-    }
-    to {
-      left: 260px;
-    }
   }
   @keyframes sun {
     from {
